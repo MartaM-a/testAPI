@@ -1,0 +1,26 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Environment-dependent path to Maven home directory
+/mavenHomeManager.xml
+.idea/
+# IntelliJ IDEA
+
+*.iml
+*.iws
+out/
+*.log
+
+# Maven
+target/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+*.local
+
+# Test reports
+test-output/
