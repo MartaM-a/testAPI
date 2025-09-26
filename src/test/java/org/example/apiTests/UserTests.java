@@ -35,12 +35,12 @@ public class UserTests {
                 .body("id", equalTo(1));
     }
     @Test
-    public void userWithId88ShouldExist() {
-        getById(USER_BY_ID_ENDPOINT, "88")
+    public void userWithId8ShouldExist() {
+        getById(USER_BY_ID_ENDPOINT, "8")
                 .then()
                 .log().all()
                 .statusCode(200)
-                .body("id", equalTo(1));
+                .body("id", equalTo(8));
     }
 
 }
