@@ -34,5 +34,13 @@ public class UserTests {
                 .statusCode(200)
                 .body("id", equalTo(1));
     }
+    @Test
+    public void userWithId88ShouldExist() {
+        getById(USER_BY_ID_ENDPOINT, "88")
+                .then()
+                .log().all()
+                .statusCode(200)
+                .body("id", equalTo(1));
+    }
 
 }
