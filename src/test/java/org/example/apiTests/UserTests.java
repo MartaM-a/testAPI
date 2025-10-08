@@ -12,9 +12,8 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.example.config.ApiConfig.*;
 import static org.example.config.ApiConfig.USER_BY_ID_ENDPOINT;
-import static org.example.utils.ClientAPI.getAll;
-import static org.example.utils.ClientAPI.getById;
-import static org.example.utils.ClientAPI.post;
+
+import static org.example.utils.ClientAPI.*;
 
 import static org.hamcrest.Matchers.equalTo;
 
@@ -66,6 +65,22 @@ public class UserTests {
 
 
 
+
+        @Test
+        public void createUserTest () {
+
+            User user = new User();
+            user.id = 1L;
+            user.username = "Marta";
+            user.email = "marta@example.com";
+
+            Response response = ClientAPI.post(ApiConfig.POSTS_ENDPOINT, user);
+
+            response.then()
+                    .statusCode(201)
+                    .body("username", equalTo("Marta"))
+                    .body("email", equalTo("marta@example.com"));
+        }
 
 
 }
