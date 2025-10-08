@@ -1,6 +1,7 @@
 package org.example.apiTests;
 
 
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.example.config.ApiConfig;
 import org.example.models.Post;
@@ -82,8 +83,31 @@ public class UserTests {
                     .body("email", equalTo("marta@example.com"));
         }
 
+    @Test
+    public void createUserTest3() {
+        User user = new User();
+        user.id = 1L;
+        user.username = "Marta";
+        user.email = "marta@example.com";
 
-}
+        given()
+                .contentType(ContentType.JSON)
+                .log().body()
+                .body(user)
+                .when()
+                .post(ApiConfig.POSTS_ENDPOINT)
+                .then()
+                .statusCode(201)
+                .body("id", equalTo(101))
+                .body("username", equalTo("Marta"))
+                .body("email", equalTo("marta@example.com"));
+    }
+
+
+    }
+
+
+
 
 
 

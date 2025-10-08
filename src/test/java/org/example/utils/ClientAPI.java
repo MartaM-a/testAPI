@@ -29,6 +29,14 @@ public static Response post(String endpoint, User user)
 
 
 
+    public static Response postNewRecord(String endpoint, Object body) {
+        return given()
+                .contentType("application/json")
+                .body(body)
+                .when()
+                .post(endpoint);
+    }
+
 
 
 
