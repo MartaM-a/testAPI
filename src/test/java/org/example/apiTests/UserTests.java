@@ -4,7 +4,7 @@ package org.example.apiTests;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.example.config.ApiConfig;
-import org.example.models.Post;
+
 import org.example.models.User;
 import org.junit.Test;
 import org.example.utils.ClientAPI;
@@ -21,7 +21,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class UserTests {
     @Test
     public void getAllUsers () {
-        getAll(USERS_ENDPOINT).then().log().all().statusCode(200).body(matchesJsonSchemaInClasspath("schemas/users_list_schema.json"));
+        getAll(USERS_ENDPOINT).then().log().all().statusCode(200).body(matchesJsonSchemaInClasspath("schemas/user_list_schema.json"));
     }
 
     @Test

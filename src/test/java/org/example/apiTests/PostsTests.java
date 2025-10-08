@@ -7,6 +7,9 @@ import static org.example.utils.ClientAPI.getAll;
 public class PostsTests {
     @Test
     public void getAllPosts () {
-        getAll(POSTS_ENDPOINT).then().log().all().statusCode(200).body(matchesJsonSchemaInClasspath("schemas/posts_list_schema.json"));
+        getAll(POSTS_ENDPOINT).then()
+                .log().all()
+                .statusCode(200).body(matchesJsonSchemaInClasspath("schemas/post_list_schema.json"));
+
     }
 }
