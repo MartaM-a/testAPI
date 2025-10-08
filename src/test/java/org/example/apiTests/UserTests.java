@@ -104,6 +104,24 @@ public class UserTests {
     }
 
 
+    @Test
+    public void createRandomUserTest() {
+        User user = User.createRandom();
+
+        given()
+                .contentType("application/json")
+                .body(user)
+                .when()
+                .post(ApiConfig.POSTS_ENDPOINT)
+                .then()
+                .log().all()
+                .statusCode(201)
+                .body("username", equalTo(user.username))
+                .body("email", equalTo(user.email));
+
+    }
+
+
     }
 
 
