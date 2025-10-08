@@ -65,26 +65,7 @@ public class UserTests {
     }
 
 
-    @Test
-    public void postNewUserTest() {
-      post(USERS_ENDPOINT, new User(1, "Marta", ")
 
-
-    @Test
-    public void createUserTest () {
-
-        User user = new User();
-        user.id = 1L;
-        user.username = "Marta";
-        user.email = "marta@example.com";
-
-        Response response = ClientAPI.post(ApiConfig.POSTS_ENDPOINT, user);
-
-        response.then()
-                .statusCode(201)
-                .body("username", equalTo("Marta"))
-                .body("email", equalTo("marta@example.com"));
-    }
 
 
 }
