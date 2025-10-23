@@ -8,6 +8,7 @@ public class ApiConfig {
     public static final String POSTS_ENDPOINT = BASE_URL + "/posts";
     public static final String USER_BY_ID_ENDPOINT = BASE_URL + "/users/{id}";
     public static final ContentType CONTENT_TYPE = ContentType.JSON;
+    public static final String POST_BY_ID_ENDPOINT=BASE_URL+"/posts/{id}";
 
 
 
